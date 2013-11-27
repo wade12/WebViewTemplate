@@ -27,7 +27,8 @@ public class MainActivity extends Activity {
 			inputStream.read(buffer);
 			inputStream.close();
 			String html = new String(buffer);
-			webView.loadData(html, "text/html", "UTF-8");
+			// webView.loadData(html, "text/html", "UTF-8");
+			webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 			
 		} // end try
 		catch (IOException ioexception) {
